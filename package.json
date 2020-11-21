@@ -1,0 +1,13 @@
+{
+  "name": "super-calc",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "clean": "rm -rf .cache dist",
+    "deploy": "npm run clean; npm run build; surge -d https://super-calc.surge.sh dist; npm run clean;"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "sass": "^1.29.0"
+  }
+}

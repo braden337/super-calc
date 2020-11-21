@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.scss" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <main>
+      <form id="calculator">
+        <fieldset>
+          <legend>Results</legend>
+          <pre id="results"></pre>
+        </fieldset>
+
+        <fieldset id="variables">
+          <legend>Variables</legend>
+          <input type="number" name="x" placeholder="X" />
+          <input type="number" name="y" placeholder="Y" />
+        </fieldset>
+
+        <fieldset id="operations">
+          <legend>Operation</legend>
+          <label
+            ><input type="radio" name="operation" value="add" checked /><span>X + Y</span></label
+          >
+          <label><input type="radio" name="operation" value="multiply" /><span>X * Y</span></label>
+          <label
+            ><input type="radio" name="operation" value="power" /><span>X<sup>Y</sup></span></label
+          >
+        </fieldset>
+
+        <input type="submit" id="calculate" value="Calculate" />
+      </form>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

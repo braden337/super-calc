@@ -1,0 +1,115 @@
+$light: #f6f7f8;
+$dark: #011627;
+$red: #ff3366;
+$green: #2ec4b6;
+$blue: #20a4f3;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: serif;
+}
+
+body {
+  background-color: $dark;
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  margin: auto;
+}
+
+form,
+input {
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+
+  * + * {
+    margin-top: 1rem;
+  }
+
+  input#calculate {
+    display: none;
+    border: none;
+    background-color: $green;
+    color: $light;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  pre#results {
+    height: 5rem;
+    width: 14rem;
+    background-color: $light;
+    color: $dark;
+    padding: 0.5rem;
+    text-align: right;
+    overflow: auto;
+  }
+}
+
+fieldset {
+  display: flex;
+  padding: 0rem 0.5rem 1rem;
+  font-family: monospace;
+  border: 1px solid $red;
+  justify-content: center;
+
+  legend {
+    background-color: $red;
+    color: $light;
+    padding: 0 0.5rem 0.25rem;
+  }
+
+  &#variables {
+    flex-flow: row;
+
+    input {
+      padding: 0.25rem;
+      font-family: inherit;
+      width: 7rem;
+      background-color: $light;
+      color: $dark;
+      border: none;
+
+      + input {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &#operations {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    input {
+      display: none;
+
+      &:checked + span {
+        background-color: $blue;
+      }
+    }
+
+    span {
+      user-select: none;
+      padding: 0.25rem 0.5rem;
+      color: $light;
+
+      &:hover {
+        background-color: darken($blue, 15%);
+        cursor: pointer;
+      }
+    }
+  }
+}
